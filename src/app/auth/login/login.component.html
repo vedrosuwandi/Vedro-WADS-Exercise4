@@ -1,0 +1,36 @@
+<head>
+    <title> Login Page</title>
+</head>
+
+<body>
+    
+<div class="container-fluid bg">
+    <div class="row">
+        <form class="form-container" #loginForm="ngForm" (ngSubmit)="login(loginForm)" >
+            <div class="errorrow" *ngIf="authError">
+                <div class="col-12 alert alert-danger">{{ authError?.message }}</div>
+            </div>
+            <h1>Login</h1>
+            <div class="form-group">
+                <input type="email" ngModel #email="ngModel" name="email" type="email" class="form-control" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <input ngModel #password="ngModel" type="password" class="form-control" placeholder="Password">
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Remember me</label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block" (click)="Login()">Sign In</button>
+            <h6>Or</h6>
+            <a  href="/register">
+            <button type="button" class="btn btn-primary btn-block">
+                Register
+            </button>
+            </a>
+        </form>
+    </div>
+</div>
+    
+</body>
+
